@@ -14,9 +14,8 @@ spawners = [
 #set of all midpoints involving two or more of the points in spawnsers
 all_midpoints = {}
 
-def powerset(iterable):
-    "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
-    s = list(iterable)
-    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
+def powerset(a_list: list):
+    "powerset([1,2,3]) --> (1,2) (1,3) (2,3) (1,2,3)"
+    return list(chain.from_iterable(combinations(a_list, r) for r in range(2, len(a_list)+1)))
 
-print(list(powerset([1, 2, 3])))
+print(powerset(['a', 'b', 'c', 'd']))
